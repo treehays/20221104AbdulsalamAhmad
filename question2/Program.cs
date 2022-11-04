@@ -5,6 +5,7 @@ namespace Lonely
     {
         static int[] Results(int[] nums, int x)
         {
+            List<int> arr1 = new List<int>();
             Array.Sort(nums);
             for (int i = 0; i < nums.Length; i++)
             {
@@ -15,7 +16,7 @@ namespace Lonely
                         // check backward
                         if ((nums[i] - 1) != nums[i - 1])
                         {
-                            
+                            arr1.Add(nums[i]);
                         }
                     }
                     // break;

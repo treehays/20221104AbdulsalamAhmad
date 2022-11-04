@@ -7,7 +7,7 @@ namespace Lonely
         {
             List<int> arr1 = new List<int>();
             Array.Sort(nums);
-            for (int i = 0; i < nums.Length; i++)
+            for (int i = 0; i < nums.Length - 1; i++)
             {
                 if (nums[i] != nums[i + 1] && (nums[i] + 1) != nums[i + 1]) //check forward
                 {
@@ -22,7 +22,11 @@ namespace Lonely
                     // break;
                 }
             }
-            return nums;
+            foreach (var item in arr1.ToArray())
+            {
+                Console.WriteLine(item);
+            }
+            return arr1.ToArray();
         }
         public static void Main(string[] args)
         {
@@ -36,31 +40,3 @@ namespace Lonely
     }
 
 }
-
-/*
-//n is size of array, i is counter variable
-    int n, i, result;
-    // ---------------------
-    int arr[n];
-    scanf("%d", &n);
-    // ---------------------
-    printf("%d\n", n);
-    for(i = 0; i < n; i++){
-        scanf("%d", &arr[i]);
-    }
-    result = lonely_integer(arr, n);
-    printf("%d", result);
-    return 0;
-*/
-
-/*
-vector<int> findLonely(vector<int>& nums) {
-    unordered_map<int, int> m;
-    for (int x : nums)
-      ++m[x];
-    vector<int> ans;
-    for (const auto [x, c] : m)
-      if (c == 1 && !m.count(x + 1) && !m.count(x - 1))
-        ans.push_back(x);
-    return ans;
-*/
